@@ -107,17 +107,29 @@ The same is true for queues, jobs, and lists:
 
 ## Subscribing to a Feed ##
     
-    thoonk.register_handler("create_notice", create_handler_pointer)
-    //args: feedname
+    thoonk.register_handler("create", create_handler_pointer)
+    #args: feedname
 
-    thoonk.register_handler("delete_notice", delete_handler_pointer)
-    //args: feedname
+    thoonk.register_handler("delete", delete_handler_pointer)
+    #args: feedname
 
-    thoonk.register_handler("publish_notice", publish_handler_pointer)
-    //args: feedname, item, id
+    thoonk.register_handler("config:<feedname>", delete_handler_pointer)
+    #args: None
 
-    thoonk.register_handler("retract_notice", retract_handler_pointer)
-    //args: feedname, id
+    thoonk.register_handler("publish", publish_handler_pointer)
+    #args: feedname, item, id
+    
+    thoonk.register_handler("edit", publish_handler_pointer)
+    #args: feedname, item, id
+
+    thoonk.register_handler("retract", retract_handler_pointer)
+    #args: feedname, id
+    
+    thoonk.register_handler("position", retract_handler_pointer)
+    #args: feedname, id, rel_id
+
+    thoonk.register_handler("finish", retract_handler_pointer)
+    #args: jobqueuename, id, result
 
 ## Using a Feed ##
 

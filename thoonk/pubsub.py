@@ -162,11 +162,13 @@ class Thoonk(object):
         Register a function to respond to feed events.
 
         Event types:
-            - create_notice
-            - delete_notice
-            - publish_notice
-            - retract_notice
-            - position_notice
+            - create
+            - delete
+            - config:<feedname>
+            - publish
+            - retract
+            - position
+            - finish
 
         Arguments:
             name    -- The name of the feed event.
@@ -372,11 +374,13 @@ class ThoonkListener(threading.Thread):
         Register a function to respond to feed events.
 
         Event types:
-            - create_notice
-            - delete_notice
-            - publish_notice
-            - retract_notice
-            - position_notice
+            - create
+            - delete
+            - config:<feedname>
+            - publish
+            - retract
+            - position
+            - finish
 
         Arguments:
             name    -- The name of the feed event.
